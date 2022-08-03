@@ -66,6 +66,15 @@ function ataqueTierra() {
   mascotaAleatorioEnemigo();
 }
 
+function crearMensaje() {
+  let sectionMensajes = document.getElementById("mensajes");
+  let parrafo = document.createElement("p");
+
+  parrafo.innerHTML = `tu macota atacó con ${ataqueJugador}, la mascota de tu enemigo atacó con ${ataqueEnemigo} - PENDIENTE`;
+
+  sectionMensajes.appendChild(parrafo);
+}
+
 function mascotaAleatorioEnemigo() {
   let ataqueAleatorio = aleatorio(1, 3);
   if (ataqueAleatorio == 1) {
@@ -75,8 +84,7 @@ function mascotaAleatorioEnemigo() {
   } else {
     ataqueEnemigo = "TIERRA";
   }
-
-  ataqueEnemigo;
+  crearMensaje();
 }
 
 function iniciarJuego() {

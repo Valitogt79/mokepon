@@ -1,6 +1,7 @@
-window.addEventListener("load", inicio); //cuando se cargue la pagina, se ejecuta la funcion inicio
+window.addEventListener("load", iniciarJuego); //cuando se cargue la pagina, se ejecuta la funcion inicio
+//let ataqueEnemigo;
 
-function seleccionarMascotaJugador() {
+let ataqueJugador = function ataqueJugador() {
   let inputHipodoge = document.getElementById("hipodoge");
   let inputCapipepo = document.getElementById("capipepo");
   let inputRatigueya = document.getElementById("ratigueya");
@@ -25,23 +26,23 @@ function seleccionarMascotaJugador() {
     alert("No seleccionaste ninguna mascota");
   }
   seleccionarMascotaEnemigo();
-}
+};
 
 function seleccionarMascotaEnemigo() {
-  let ataqueAleatorio = aleatorio(1, 6);
+  let mascotaAleatorio = aleatorio(1, 6);
   let spanMascotaEnemigo = document.getElementById("mascota-enemigo");
 
-  if (ataqueAleatorio == 1) {
+  if (mascotaAleatorio == 1) {
     spanMascotaEnemigo.innerHTML = "Hipodoge";
-  } else if (ataqueAleatorio == 2) {
+  } else if (mascotaAleatorio == 2) {
     spanMascotaEnemigo.innerHTML = "Capipepo";
-  } else if (ataqueAleatorio == 3) {
+  } else if (mascotaAleatorio == 3) {
     spanMascotaEnemigo.innerHTML = "Ratigueya";
-  } else if (ataqueAleatorio == 4) {
+  } else if (mascotaAleatorio == 4) {
     spanMascotaEnemigo.innerHTML = "Langostelvis";
-  } else if (ataqueAleatorio == 5) {
+  } else if (mascotaAleatorio == 5) {
     spanMascotaEnemigo.innerHTML = "Tucapalma";
-  } else if (ataqueAleatorio == 6) {
+  } else if (mascotaAleatorio == 6) {
     spanMascotaEnemigo.innerHTML = "Pydos";
   }
 }
@@ -50,8 +51,44 @@ function aleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function inicio() {
-  let botonMascotaJugador = document
-    .getElementById("boton-mascota")
-    .addEventListener("click", seleccionarMascotaJugador);
+function ataqueFuego() {
+  ataqueJugador = "FUEGO";
+  mascotaAleatorioEnemigo();
+}
+
+function ataqueAgua() {
+  ataqueJugador = "AGUA";
+  mascotaAleatorioEnemigo();
+}
+
+function ataqueTierra() {
+  ataqueJugador = "TIERRA";
+  mascotaAleatorioEnemigo();
+}
+
+function mascotaAleatorioEnemigo() {
+  let ataqueAleatorio = aleatorio(1, 3);
+  if (ataqueAleatorio == 1) {
+    ataqueEnemigo = "FUEGO";
+  } else if (ataqueAleatorio == 2) {
+    ataqueEnemigo = "AGUA";
+  } else {
+    ataqueEnemigo = "TIERRA";
+  }
+
+  ataqueEnemigo;
+}
+
+function iniciarJuego() {
+  let botonMascotaJugador = document.getElementById("boton-mascota");
+  botonMascotaJugador.addEventListener("click", ataqueJugador);
+
+  let botonFuego = document.getElementById("boton-fuego");
+  botonFuego.addEventListener("click", ataqueFuego);
+
+  let botonAguar = document.getElementById("boton-agua");
+  botonAguar.addEventListener("click", ataqueAgua);
+
+  let botonTierra = document.getElementById("boton-tierra");
+  botonTierra.addEventListener("click", ataqueTierra);
 }

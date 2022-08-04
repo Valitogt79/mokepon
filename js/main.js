@@ -1,5 +1,6 @@
 window.addEventListener("load", iniciarJuego); //cuando se cargue la pagina, se ejecuta la funcion inicio
-//let ataqueEnemigo;
+let ataqueEnemigo;
+let resultado = "";
 
 let ataqueJugador = function ataqueJugador() {
   let inputHipodoge = document.getElementById("hipodoge");
@@ -66,17 +67,9 @@ function ataqueTierra() {
   mascotaAleatorioEnemigo();
 }
 
-function crearMensaje() {
-  let sectionMensajes = document.getElementById("mensajes");
-  let parrafo = document.createElement("p");
-
-  parrafo.innerHTML = `tu macota atacó con ${ataqueJugador}, la mascota de tu enemigo atacó con ${ataqueEnemigo} - PENDIENTE`;
-
-  sectionMensajes.appendChild(parrafo);
-}
-
 function mascotaAleatorioEnemigo() {
   let ataqueAleatorio = aleatorio(1, 3);
+
   if (ataqueAleatorio == 1) {
     ataqueEnemigo = "FUEGO";
   } else if (ataqueAleatorio == 2) {
@@ -84,7 +77,31 @@ function mascotaAleatorioEnemigo() {
   } else {
     ataqueEnemigo = "TIERRA";
   }
+  combate();
   crearMensaje();
+}
+
+function combate() {
+  if (ataqueJugador == ataqueEnemigo) {
+    resultado = "EMPATE";
+  } else if (ataqueJugador == "FUEGO" && ataqueEnemigo == "TIERRA") {
+    resultado = "GANASTE";
+  } else if (ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO") {
+    resultado = "GANASTE";
+  } else if (ataqueJugador == "TIERRA" && ataqueEnemigo == "AGUA") {
+    resultado = "GANASTE";
+  } else {
+    resultado = "PERDISTE";
+  }
+}
+
+function crearMensaje() {
+  let sectionMensajes = document.getElementById("mensajes");
+  let parrafo = document.createElement("p");
+
+  parrafo.innerHTML = `tu macota atacó con ${ataqueJugador}, la mascota de tu enemigo atacó con ${ataqueEnemigo} - ${resultado}`;
+
+  sectionMensajes.appendChild(parrafo);
 }
 
 function iniciarJuego() {

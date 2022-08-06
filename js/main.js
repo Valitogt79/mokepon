@@ -7,6 +7,12 @@ let vidasEnemigo = 3;
 
 //Funcion de inicio del juego
 function iniciarJuego() {
+  let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
+  sectionSeleccionarAtaque.style.display = 'none';
+
+  let sectionReiniciar = document.getElementById('reiniciar');
+  sectionReiniciar.style.display = 'none';
+
   let botonMascotaJugador = document.getElementById('boton-mascota');
   botonMascotaJugador.addEventListener('click', ataqueJugador);
 
@@ -22,8 +28,15 @@ function iniciarJuego() {
   let botonReiniciar = document.getElementById('boton-reiniciar');
   botonReiniciar.addEventListener('click', reiniciarJuego);
 }
+
 //Funcion de ataque del jugador
 let ataqueJugador = function ataqueJugador() {
+  let sectionSeleccionarMascota = document.getElementById(
+    'seleccionar-mascota'
+  );
+  sectionSeleccionarMascota.style.display = 'none';
+  let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
+  sectionSeleccionarAtaque.style.display = 'block';
   let inputHipodoge = document.getElementById('hipodoge');
   let inputCapipepo = document.getElementById('capipepo');
   let inputRatigueya = document.getElementById('ratigueya');
@@ -46,6 +59,7 @@ let ataqueJugador = function ataqueJugador() {
     spanMascotaJugador.innerHTML = 'Pydos';
   } else {
     alert('No seleccionaste ninguna mascota');
+    reiniciarJuego();
   }
   seleccionarMascotaEnemigo();
 };
@@ -167,6 +181,9 @@ function crearMensajeFinal(resultadoFinal) {
 
   let botonTierra = document.getElementById('boton-tierra');
   botonTierra.disabled = true;
+
+  let sectionReiniciar = document.getElementById('reiniciar');
+  sectionReiniciar.style.display = 'block';
 }
 
 //funcion de reinicio de juego para volver a jugar

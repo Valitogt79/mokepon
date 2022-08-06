@@ -51,19 +51,47 @@ body {
   width: 80px;
 }
 
+.tarjeta-de-mokepon:hover {
+  background: #646fd4;
+  color: white;
+  cursor: pointer;
+}
 input {
   display: none;
 }
 
 button {
-  width: 100px;
-  background: #dbdffd;
+  width: 180px;
+  height: 50px;
+  background: transparent;
   font-family: 'Fredoka One', cursive;
-  color: black;
-  padding: 10px;
   box-sizing: border-box;
-  margin: 10px;
-  border-radius: 10px;
-  border: 1px solid #646fd4;
+  border-radius: 20px;
+  border: 2px solid #646fd4;
   cursor: pointer;
+  color: rgb(87, 23, 225);
+  font-size: 1rem;
+  margin-top: 30px;
+}
+
+button:hover {
+  background: #646fd4;
+  color: white;
+}
+#seleccionar-ataque {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#mensajes {
+  width: 280px;
+  background-color: pink;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

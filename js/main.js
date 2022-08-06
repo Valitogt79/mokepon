@@ -5,6 +5,23 @@ let mensaje;
 let vidasJugador = 3;
 let vidasEnemigo = 3;
 
+//Funcion de inicio del juego
+function iniciarJuego() {
+  let botonMascotaJugador = document.getElementById('boton-mascota');
+  botonMascotaJugador.addEventListener('click', ataqueJugador);
+
+  let botonFuego = document.getElementById('boton-fuego');
+  botonFuego.addEventListener('click', ataqueFuego);
+
+  let botonAguar = document.getElementById('boton-agua');
+  botonAguar.addEventListener('click', ataqueAgua);
+
+  let botonTierra = document.getElementById('boton-tierra');
+  botonTierra.addEventListener('click', ataqueTierra);
+
+  let botonReiniciar = document.getElementById('boton-reiniciar');
+  botonReiniciar.addEventListener('click', reiniciarJuego);
+}
 //Funcion de ataque del jugador
 let ataqueJugador = function ataqueJugador() {
   let inputHipodoge = document.getElementById('hipodoge');
@@ -141,19 +158,18 @@ function crearMensajeFinal(resultadoFinal) {
   parrafo.innerHTML = `${resultadoFinal}`;
 
   sectionMensajes.appendChild(parrafo);
-}
-
-//Funcion de inicio del juego
-function iniciarJuego() {
-  let botonMascotaJugador = document.getElementById('boton-mascota');
-  botonMascotaJugador.addEventListener('click', ataqueJugador);
 
   let botonFuego = document.getElementById('boton-fuego');
-  botonFuego.addEventListener('click', ataqueFuego);
+  botonFuego.disabled = true;
 
   let botonAguar = document.getElementById('boton-agua');
-  botonAguar.addEventListener('click', ataqueAgua);
+  botonAguar.disabled = true;
 
   let botonTierra = document.getElementById('boton-tierra');
-  botonTierra.addEventListener('click', ataqueTierra);
+  botonTierra.disabled = true;
+}
+
+//funcion de reinicio de juego para volver a jugar
+function reiniciarJuego() {
+  location.reload();
 }

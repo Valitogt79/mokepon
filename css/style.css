@@ -1,13 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300&display=swap');
 
 body {
-  font-family: 'Fredoka One', cursive;
-  background-color: #242f9b;
-  background-image: linear-gradient(
-    102.4deg,
-    rgba(253, 189, 85, 1) 7.8%,
-    rgba(249, 131, 255, 1) 100.3%
-  );
+  font-family: 'Poppins', sans-serif;
+  background-color: #041562;
 }
 
 #seleccionar-mascota {
@@ -18,82 +13,78 @@ body {
 }
 
 .titulo {
-  color: rgb(87, 23, 225);
-  font-size: 2.1875rem;
+  color: white;
+  font-size: 32px;
+  font-family: 'Fredoka One', cursive;
 }
 
 .subtitulo {
-  color: rgb(87, 23, 225);
-  font-size: 1.25rem;
+  color: white;
+  font-size: 20px;
 }
 
 .tarjetas,
-.tarjeta-ataques {
+.tarjetas-ataques {
   display: flex;
   gap: 10px;
 }
 
 .tarjeta-de-mokepon {
   width: 180px;
-  height: 115px;
-  background: #646fd4;
+  height: 100px;
+  background: #11468f;
   padding: 10px;
   box-sizing: border-box;
-  margin: 10px;
   border-radius: 20px;
-  border: 1px solid #9ba3eb;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .tarjeta-de-mokepon img {
   width: 80px;
 }
 
-/* .tarjeta-de-mokepon:hover {
-  background: #646fd4;
+#boton-mascota {
+  width: 180px;
+  height: 40px;
+  border-radius: 20px;
+  background: transparent;
+  border: 2px solid white;
   color: white;
-  cursor: pointer;
-} */
+  font-family: 'Poppins', sans-serif;
+  margin-top: 30px;
+}
 
 input {
   display: none;
 }
 
 input:checked + label {
-  background-color: rgb(56, 13, 148);
+  background-color: #5d8bf4;
 }
 
-button {
-  width: 180px;
-  height: 50px;
-  background: transparent;
-  font-family: 'Fredoka One', cursive;
-  box-sizing: border-box;
-  border-radius: 20px;
-  border: 2px solid #646fd4;
-  cursor: pointer;
-  color: rgb(87, 23, 225);
-  font-size: 1rem;
-  margin-top: 30px;
-}
-
-button:hover {
-  background: #646fd4;
-  color: white;
-}
 #seleccionar-ataque {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+}
+
+.boton-de-ataque {
+  background-color: #11468f;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border-color: transparent;
+  width: 180px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 #mensajes {
   width: 280px;
-  background-color: pink;
+  background: #eeeeee;
   padding: 20px;
   margin-top: 20px;
   border-radius: 20px;
@@ -101,27 +92,35 @@ button:hover {
   align-items: center;
   flex-direction: column;
 }
+
+#boton-reiniciar {
+  border: none;
+  color: #11468f;
+  font-family: 'Poppins', sans-serif;
+}
+
 .ataques {
-  margin-top: 20px;
   display: grid;
-  grid-template-columns: 250px 250px;
-  text-align: center;
+  grid-template-columns: 100px 100px;
+  color: white;
+}
+
+#vidas-jugador,
+#vidas-enemigo {
+  font-size: 32px;
+  margin-bottom: 0;
 }
 
 .ataques-jugador,
 .ataques-enemigo {
-  font-size: 2rem;
-  margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px dotted #646fd4;
 }
-/* medias querys */
 
 @media (max-width: 360px) {
   .tarjetas,
-  .tarjeta-ataques {
+  .tarjetas-ataques {
     flex-direction: column;
   }
 }

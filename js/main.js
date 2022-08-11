@@ -18,6 +18,9 @@ const contenedorAtaques = document.getElementById('contenedorAtaques');
 let inputHipodoge;
 let inputCapipepo;
 let inputRatigueya;
+let inputPydos;
+let inputLangostelvis;
+let inputTucapalma;
 let mascotaJugador;
 let mokepones = [];
 let ataqueJugador = [];
@@ -63,6 +66,19 @@ let ratigueya = new Mokepon(
   'img/mokepons_mokepon_ratigueya_attack.webp',
   5
 );
+
+let langostelvis = new Mokepon(
+  'Langostelvis',
+  'img/mokepons_mokepon_langostelvis_attack.webp',
+  5
+);
+let pydos = new Mokepon('Pydos', 'img/mokepons_mokepon_pydos_attack.webp', 5);
+
+let tucapalma = new Mokepon(
+  'Tucapalma',
+  'img/mokepons_mokepon_tucapalma_attack.webp',
+  5
+);
 //creando los Arrays
 hipodoge.ataques.push(
   { nombre: '💧', id: 'boton-agua' },
@@ -86,7 +102,28 @@ ratigueya.ataques.push(
   { nombre: '💧', id: 'boton-agua' },
   { nombre: '🌻', id: 'boton-tierra' }
 );
-mokepones.push(hipodoge, capipepo, ratigueya);
+langostelvis.ataques.push(
+  { nombre: '🔥', id: 'boton-fuego' },
+  { nombre: '🌻', id: 'boton-fuego' },
+  { nombre: '💧', id: 'boton-fuego' },
+  { nombre: '💧', id: 'boton-agua' },
+  { nombre: '🌻', id: 'boton-tierra' }
+);
+pydos.ataques.push(
+  { nombre: '🔥', id: 'boton-fuego' },
+  { nombre: '🌻', id: 'boton-fuego' },
+  { nombre: '🔥', id: 'boton-fuego' },
+  { nombre: '💧', id: 'boton-agua' },
+  { nombre: '🌻', id: 'boton-tierra' }
+);
+tucapalma.ataques.push(
+  { nombre: '🔥', id: 'boton-fuego' },
+  { nombre: '💧', id: 'boton-fuego' },
+  { nombre: '🔥', id: 'boton-fuego' },
+  { nombre: '💧', id: 'boton-agua' },
+  { nombre: '🌻', id: 'boton-tierra' }
+);
+mokepones.push(hipodoge, capipepo, ratigueya, langostelvis, pydos, tucapalma);
 
 function iniciarJuego() {
   sectionSeleccionarAtaque.style.display = 'none';
@@ -103,6 +140,9 @@ function iniciarJuego() {
     inputHipodoge = document.getElementById('Hipodoge');
     inputCapipepo = document.getElementById('Capipepo');
     inputRatigueya = document.getElementById('Ratigueya');
+    inputLangostelvis = document.getElementById('Langostelvis');
+    inputPydos = document.getElementById('Pydos');
+    inputTucapalma = document.getElementById('Tucapalma');
   });
   botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador);
   botonReiniciar.addEventListener('click', reiniciarJuego);
@@ -120,6 +160,15 @@ function seleccionarMascotaJugador() {
   } else if (inputRatigueya.checked) {
     spanMascotaJugador.innerHTML = inputRatigueya.id;
     mascotaJugador = inputRatigueya.id;
+  } else if (inputPydos.checked) {
+    spanMascotaJugador.innerHTML = inputPydos.id;
+    mascotaJugador = inputPydos.id;
+  } else if (inputTucapalma.checked) {
+    spanMascotaJugador.innerHTML = inputTucapalma.id;
+    mascotaJugador = inputTucapalma.id;
+  } else if (inputLangostelvis.checked) {
+    spanMascotaJugador.innerHTML = inputLangostelvis.id;
+    mascotaJugador = inputLangostelvis.id;
   } else {
     alert('Selecciona una mascota');
   }

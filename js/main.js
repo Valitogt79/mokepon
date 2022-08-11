@@ -242,7 +242,7 @@ function combate() {
 
 function revisarVidas() {
   if (victoriasJugador === victoriasEnemigo) {
-    crearMensajeFinal('Esto fue un empate!!');
+    crearMensajeFinal('Esto fue un empate!! 🤝');
   } else if (victoriasJugador > victoriasEnemigo) {
     crearMensajeFinal('FELICITACIONES!! GANASTE 😎');
   } else {

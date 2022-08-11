@@ -81,6 +81,10 @@ input:checked + label {
   border-color: transparent;
   color: white;
   font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #mensajes {

@@ -95,7 +95,7 @@ input:checked + label {
 
 #boton-reiniciar {
   border: none;
-  color: #11468f;
+  color: red;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -118,7 +118,7 @@ input:checked + label {
   align-items: center;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 650px) {
   .tarjetas,
   .tarjetas-ataques {
     flex-direction: column;

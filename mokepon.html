@@ -17,10 +17,18 @@
       <h1 class="titulo">Recorre el mapa con tu mokepon</h1>
       <canvas id="mapa"></canvas>
       <div class="movimiento">
-        <button onClick="moverCapipepoAbajo()">⬇️</button>
-        <button onClick="moverCapipepoArriba()">⬆️</button>
-        <button onClick="moverCapipepoIzquierda()">⬅️</button>
-        <button onClick="moverCapipepoDerecha()">➡️</button>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverArriba()">
+          ⬆️
+        </button>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">
+          ⬅️
+        </button>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">
+          ⬇️
+        </button>
+        <button onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">
+          ➡️
+        </button>
       </div>
     </section>
 

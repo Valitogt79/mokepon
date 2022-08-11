@@ -12,12 +12,25 @@
       <div id="contenedorTarjetas" class="tarjetas"></div>
       <button id="boton-mascota">Seleccionar</button>
     </section>
+
+    <section id="ver-mapa">
+      <h1 class="titulo">Recorre el mapa con tu mokepon</h1>
+      <canvas id="mapa"></canvas>
+      <div class="movimiento">
+        <button onClick="moverCapipepoAbajo()">⬇️</button>
+        <button onClick="moverCapipepoArriba()">⬆️</button>
+        <button onClick="moverCapipepoIzquierda()">⬅️</button>
+        <button onClick="moverCapipepoDerecha()">➡️</button>
+      </div>
+    </section>
+
     <section id="seleccionar-ataque">
       <h1 class="titulo">Mokepon</h1>
       <h2 class="subtitulo">Elige tu ataque:</h2>
       <div id="contenedorAtaques" class="tarjetas-ataques"></div>
       <div id="mensajes">
         <p id="resultado">Mucha suerte</p>
+
         <section id="reiniciar">
           <button id="boton-reiniciar">Reiniciar</button>
         </section>
